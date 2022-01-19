@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Destination() {
     // make a fetch call to access list of trains by color onClick and set them to the trainList
