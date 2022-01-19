@@ -16,7 +16,8 @@ const Profiles = () => {
         <>
           {profiles.map(profile=>
             <p key={profile._id}>{profile.name}</p>
-          )}
+            )
+          }
         </>
       :
         <p>No profiles yet</p>
