@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import Origin from '../../components/Origin'
 
 const AddTrip = () => {
     const navigate = useNavigate()
@@ -37,7 +38,8 @@ const AddTrip = () => {
 
     return (
         <>
-            <form
+            <Origin />
+            {/* <form
                 autoComplete='off'
                 onSubmit={handleSubmit}
             >
@@ -45,7 +47,7 @@ const AddTrip = () => {
                     type="text"
                     value={tripName}
                 />
-            </form>
+            </form> */}
         </>
     )
 }
