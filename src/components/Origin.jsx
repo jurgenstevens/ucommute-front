@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react'
 function Origin() {
     // make a fetch call to access list of trains by color onClick and set them to the trainList
     const [trainData, setTrainData] = useState([])
-    const [selectedLine, setSelectedLine] = useState(null)
-    const [selectedStation, setSelectedStation] = useState(null)
+    const [originLine, setOriginLine] = useState(null)
+    const [originStation, setOriginStation] = useState(null)
 
-    const lines = ['Orange', 'Brown', 'Red', 'Blue', 'Green', 'Purple', 'Yellow']
+    const lines = ['---', 'Orange', 'Brown', 'Red', 'Blue', 'Green', 'Purple', 'Yellow']
 
     // use the fetch method to return all of the station from the database
     useEffect(() => {
@@ -21,13 +21,15 @@ function Origin() {
     }, [])
 
     // create a function to set the selected train line to the selectedLine hook
+    const handleLineChange = (e) => setOriginLine(e.target.value)
+    console.log("This is origin line:", originLine)
 
     //create a function to render the dropdown for the stations if and when the line is selected
 
     return (
         <div>
             Origin
-            <select>
+            <select onChange={e => handleLineChange(e)}>
                 {lines.map(line => {
                     return(
                         <option value={line} key={line}>{line}</option>
