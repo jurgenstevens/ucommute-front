@@ -28,7 +28,7 @@ function Destination() {
 
     return (
         <div>
-            Destination
+            <h3>Destination</h3>
             <select onChange={e => handleLineChange(e)}>
                 {lines.map(line => {
                     return(

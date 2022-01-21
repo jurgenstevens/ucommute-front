@@ -20,15 +20,21 @@ function Origin() {
             })
     }, [])
 
-    // create a function to set the selected train line to the selectedLine hook
+    // create a function to set the selected train line to the originLine hook
     const handleLineChange = (e) => setOriginLine(e.target.value)
     console.log("This is origin line:", originLine)
 
+    
     //create a function to render the dropdown for the stations if and when the line is selected
+    const selectedLineStations = trainData.filter(station => station.line === originLine)
+
+    // create a function to set the selected station to the originStation hook
+    const handleStationChange = (e) => setOriginStation(e.target.value)
+    console.log("This is origin station", originStation)
 
     return (
         <div>
-            Origin
+            <h3>Origin</h3>
             <select onChange={e => handleLineChange(e)}>
                 {lines.map(line => {
                     return(
@@ -36,6 +42,16 @@ function Origin() {
                     )
                 })}
             </select>
+            {
+            // set a ternary operator stating that if the user has picked an origin line, they can now pick a station for the origin
+            originLine ? 
+            <select onChange={e => handleStationChange(e)}>
+                {selectedLineStations.map((station, idx) => {
+                    return(
+                        <option value={station.station} key={idx}>{station.station}</option>
+                    )
+                })}
+            </select> : <h4>Choose a train line.</h4>}
         </div>
     )
 }
