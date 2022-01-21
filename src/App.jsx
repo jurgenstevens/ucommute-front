@@ -9,9 +9,11 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddTrip from './pages/AddTrip/AddTrip'
 
+
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [trips, setTrips] = useState([])
 
   const handleLogout = () => {
     authService.logout()
