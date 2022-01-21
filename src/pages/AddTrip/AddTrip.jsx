@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Origin from '../../components/Origin'
-import Destination from '../../components/Destination'
 
 const AddTrip = () => {
     const navigate = useNavigate()
@@ -10,6 +8,44 @@ const AddTrip = () => {
         origin: '',
         destination: '',
     })
+    // make a fetch call to access list of trains by color onClick and set them to the trainList
+    const [trainData, setTrainData] = useState([])
+    const [originLine, setOriginLine] = useState('')
+    const [destinationLine, setDestinationLine] = useState('')
+
+    const lines = ['---', 'Orange', 'Brown', 'Red', 'Blue', 'Green', 'Purple', 'Yellow']
+
+    // use the fetch method to return all of the station from the database
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_BACKEND_SERVER_URL}/stations`)
+            .then((res) => res.json())
+            .then((trainData) => {
+                setTrainData(trainData)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
+
+    // ORIGIN
+    // create a function to set the selected train line to the originLine hook
+    const handleOriginLineChange = (e) => setOriginLine(e.target.value)
+
+    //create a function to render the dropdown for the stations if and when the line is selected
+    const selectedOriginLineStations = trainData.filter(station => station.line === originLine)
+
+    // create a function to set the selected station to formData.origin
+    const handleOriginStationChange = (e) => setFormData({...formData, origin: e.target.value})
+
+    // DESTINATION
+    // create a function to set the selected train line to the selectedLine hook
+    const handleDestinationLineChange = (e) => setDestinationLine(e.target.value)
+
+    // create a function to set the selected station to formData.destination
+    const selectedDestinationLineStations = trainData.filter(station => station.line === originLine)
+    console.log(formData)
+
+    const handleDestinationStationChange = (e) => setFormData({...formData, destination: e.target.value})
 
     const handleChange = e => {
         setFormData({
@@ -39,8 +75,57 @@ const AddTrip = () => {
 
     return (
         <>
-            <Origin />
-            <Destination />
+            {/* Origin */}
+            <div className='origin'>
+                <h3>Origin</h3>
+                <select onChange={e => handleOriginLineChange(e)}>
+                    {lines.map(line => {
+                        return(
+                            <option value={line} key={line}>{line}</option>
+                        )
+                    })}
+                </select>
+                <br />
+                {
+                // set a ternary operator stating that if the user has picked an origin line, they can now pick a station for the origin
+                originLine ? 
+                <select onChange={e => handleOriginStationChange(e)}>
+                    <option>---</option>
+                    {selectedOriginLineStations.map((station, idx) => {
+                        return(
+                            <option value={station._id} key={idx}>{station.station}</option>
+                        )
+                    })}
+                </select> : 
+                <h4>Choose a train line.</h4>
+                }
+            </div>
+            
+            {/* Destination */}
+            <div className='destination'>
+                <h3>Destination</h3>
+                <select onChange={e => handleDestinationLineChange(e)}>
+                    {lines.map(line => {
+                        return(
+                            <option value={line} key={line}>{line}</option>
+                        )
+                    })}
+                </select>
+                <br />
+                {
+                // set a ternary operator stating that if the user has picked an origin line, they can now pick a station for the origin
+                destinationLine ? 
+                <select onChange={e => handleDestinationStationChange(e)}>
+                    <option>---</option>
+                    {selectedDestinationLineStations.map((station, idx) => {
+                        return(
+                            <option value={station._id} key={idx}>{station.station}</option>
+                        )
+                    })}
+                </select> : <h4>Choose a train line.</h4>}
+            </div>
+            
+            {/* Trip Name */}
             {/* <form
                 autoComplete='off'
                 onSubmit={handleSubmit}
