@@ -13,7 +13,7 @@ import AddTrip from './pages/AddTrip/AddTrip'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [trips, setTrips] = useState([])
+  const [tripData, setTripData] = useState([])
 
   const handleLogout = () => {
     authService.logout()

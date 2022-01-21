@@ -35,7 +35,6 @@ const AddTrip = () => {
     const selectedOriginLineStations = trainData.filter(station => station.line === originLine)
 
     // create a function to set the selected station to formData.origin
-    const handleOriginStationChange = (e) => setFormData({...formData, origin: e.target.value})
 
     // DESTINATION
     // create a function to set the selected train line to the selectedLine hook
@@ -44,8 +43,6 @@ const AddTrip = () => {
     // create a function to set the selected station to formData.destination
     const selectedDestinationLineStations = trainData.filter(station => station.line === originLine)
     console.log(formData)
-
-    const handleDestinationStationChange = (e) => setFormData({...formData, destination: e.target.value})
 
     const handleChange = e => {
         setFormData({
@@ -69,7 +66,7 @@ const AddTrip = () => {
 
     // form validation; can't create trip unless fields are filled
     const isFormInvalid = () => {
-        return !(tripName, origin, destination)
+        return !(tripName && origin && destination)
       }
 
 
@@ -95,8 +92,8 @@ const AddTrip = () => {
                     originLine ? 
                     <select
                         onChange={handleChange}
-                        value={destination}
-                        name="destination"
+                        value={origin}
+                        name="origin"
                     >
                         <option>---</option>
                         {selectedOriginLineStations.map((station, idx) => {
@@ -139,6 +136,7 @@ const AddTrip = () => {
                 
             {/* Trip Name */}
                 <div className="tripName">
+                    <h3>Trip Name:</h3>
                     <input 
                         type="text"
                         value={tripName}
@@ -146,6 +144,11 @@ const AddTrip = () => {
                         onChange={handleChange}
                     />
                 </div>
+                <br />
+                <button disabled={isFormInvalid()}>Create</button>
+                <Link to="/">
+                    <button>Cancel</button>         
+                </Link>
             </form>
         </>
     )
