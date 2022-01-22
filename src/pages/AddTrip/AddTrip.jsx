@@ -10,6 +10,7 @@ const AddTrip = (props) => {
     })
     // make a fetch call to access list of trains by color onClick and set them to the trainList
     const [trainData, setTrainData] = useState([])
+    console.log("This is train data", trainData)
     const [originLine, setOriginLine] = useState('')
     const [destinationLine, setDestinationLine] = useState('')
 
@@ -21,6 +22,7 @@ const AddTrip = (props) => {
             .then((res) => res.json())
             .then((trainData) => {
                 setTrainData(trainData)
+                console.log("This is useEffect trainData: ", trainData)
             })
             .catch((err) => {
                 console.log(err)
@@ -33,8 +35,6 @@ const AddTrip = (props) => {
 
     //create a function to render the dropdown for the stations if and when the line is selected
     const selectedOriginLineStations = trainData.filter(station => station.line === originLine)
-
-    // create a function to set the selected station to formData.origin
 
     // DESTINATION
     // create a function to set the selected train line to the selectedLine hook
