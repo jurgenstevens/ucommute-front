@@ -8,21 +8,28 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddTrip from './pages/AddTrip/AddTrip'
+import { createTrip } from './services/tripService'
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [tripData, setTripData] = useState([])
+  const [trips, setTrips] = useState([])
 
   const handleLogout = () => {
     authService.logout()
     setUser(null)
     navigate('/')
   }
-
+  
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  // function to handle creating a trip
+  const handleCreateTrip = tripData => {
+    createTrip(tripData)
+    .then(newTripData => setTrips([...trips, newTripData]))
   }
 
   return (
@@ -46,7 +53,7 @@ const App = () => {
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
-        <Route path="/addTrip" element={<AddTrip />} />
+        <Route path="/addTrip" element={<AddTrip handleCreateTrip={handleCreateTrip} />} />
       </Routes>
     </>
   )

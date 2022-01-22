@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const AddTrip = () => {
+const AddTrip = (props) => {
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
         tripName: '',
@@ -55,6 +55,7 @@ const AddTrip = () => {
         e.preventDefault()
         try {
           // call will go here to submit to API
+          props.handleCreateTrip(formData)
           navigate('/')
         } catch (err) {
           console.log(err)
