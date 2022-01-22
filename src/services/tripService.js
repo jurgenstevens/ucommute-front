@@ -21,9 +21,18 @@ function getTrips(){
     .then(res => res.json())
 }
 
+function deleteTrip(id){
+    return fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE',
+        headers: {'Authorization': `Bearer ${tokenService.getToken()}`}
+    })
+    .then(res => res.json())
+}
+
 
 
 export { 
     createTrip,
-    getTrips
+    getTrips,
+    deleteTrip
  }

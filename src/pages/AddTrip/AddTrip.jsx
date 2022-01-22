@@ -10,7 +10,6 @@ const AddTrip = (props) => {
     })
     // make a fetch call to access list of trains by color onClick and set them to the trainList
     const [trainData, setTrainData] = useState([])
-    console.log("This is train data", trainData)
     const [originLine, setOriginLine] = useState('')
     const [destinationLine, setDestinationLine] = useState('')
 
@@ -19,12 +18,11 @@ const AddTrip = (props) => {
     // use the fetch method to return all of the station from the database
     useEffect(() => {
         fetch(`${process.env.REACT_APP_BACKEND_SERVER_URL}/stations`)
-            .then((res) => res.json())
-            .then((trainData) => {
+            .then(res => res.json())
+            .then(trainData => {
                 setTrainData(trainData)
-                console.log("This is useEffect trainData: ", trainData)
             })
-            .catch((err) => {
+            .catch(err => {
                 console.log(err)
             })
     }, [])
@@ -42,7 +40,6 @@ const AddTrip = (props) => {
 
     // create a function to set the selected station to formData.destination
     const selectedDestinationLineStations = trainData.filter(station => station.line === originLine)
-    console.log(formData)
 
     const handleChange = e => {
         setFormData({
@@ -69,7 +66,6 @@ const AddTrip = (props) => {
     const isFormInvalid = () => {
         return !(tripName && origin && destination)
       }
-
 
     return (
         <>
@@ -146,7 +142,7 @@ const AddTrip = (props) => {
                     />
                 </div>
                 <br />
-                <button disabled={isFormInvalid()}>Create</button>
+                <button disabled={isFormInvalid()}>Create</button>    
                 <Link to="/">
                     <button>Cancel</button>         
                 </Link>

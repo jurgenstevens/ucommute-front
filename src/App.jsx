@@ -9,7 +9,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddTrip from './pages/AddTrip/AddTrip'
 import Trips from './pages/Trips/Trips'
-import { createTrip, getTrips } from './services/tripService'
+import { createTrip, getTrips, deleteTrip } from './services/tripService'
 
 
 const App = () => {
@@ -38,6 +38,16 @@ const App = () => {
     .then(newTripData => setTrips([...trips, newTripData]))
   }
 
+  // function to handle deleting a trip
+  const handleDeleteTrip = id => {
+    //make API call to delete trip
+    deleteTrip(id)
+    .then(deletedTrip => {
+      setTrips(trips.filter(trip => trip._id !== deletedTrip._id))
+    })
+    // update state to reflect deleted trip
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -60,7 +70,10 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
         <Route path="/addTrip" element={<AddTrip handleCreateTrip={handleCreateTrip} />} />
-        <Route path='/trips' element={<Trips user={user} trips={trips} />} />
+        <Route path="/trips" element={user ? 
+          <Trips user={user} trips={trips} handleDeleteTrip={handleDeleteTrip} /> : 
+          <Navigate to="/login" />} 
+        />
       </Routes>
     </>
   )

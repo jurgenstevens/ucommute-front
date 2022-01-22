@@ -3,7 +3,6 @@ import React from 'react';
 function Trips(props) {
     // All of the trips from App.jsx state to map through
     const trips = props.trips
-    console.log(trips)
     return (
     <>
         <h1>Trips</h1>
@@ -18,9 +17,9 @@ function Trips(props) {
                     <h5 className="card-title">{trip.tripName}</h5>
                     <p className="card-text">Origin: {trip.origin.station}</p>
                     <p className="card-text">Destination: {trip.destination.station}</p>
-                    <a href="/" class="btn btn-primary">Details</a>
+                    <a href="/" className="btn btn-primary">Details</a>
                     {(props.user.profile === trip.commuter._id) && 
-                    <button className="btn btn-danger">Delete</button>
+                    <button onClick={() => props.handleDeleteTrip(trip._id)} className="btn btn-danger">Delete</button>
                     }
                 </div>
                 </div>
