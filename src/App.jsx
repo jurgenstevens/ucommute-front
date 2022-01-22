@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -8,13 +8,19 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddTrip from './pages/AddTrip/AddTrip'
-import { createTrip } from './services/tripService'
+import Trips from './pages/Trips/Trips'
+import { createTrip, getTrips } from './services/tripService'
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
-  const navigate = useNavigate()
   const [trips, setTrips] = useState([])
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    getTrips()
+    .then(trips => setTrips(trips))
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
@@ -54,6 +60,7 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
         <Route path="/addTrip" element={<AddTrip handleCreateTrip={handleCreateTrip} />} />
+        <Route path='/trips' element={<Trips trips={trips} />} />
       </Routes>
     </>
   )
