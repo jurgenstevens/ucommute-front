@@ -1,15 +1,16 @@
 import React from 'react';
 
 function Trips(props) {
+    // All of the trips from App.jsx state to map through
     const trips = props.trips
-    console.log('This is trips from Trips: ' ,trips)
+    console.log(trips)
     return (
     <>
         <h1>Trips</h1>
         <div className="row">
-            {trips.map((trip, idx) => 
+            {trips.map(trip => 
             <div 
-                key={idx}
+                key={trip._id}
                 className="col-sm-3">
                 <div className="card">
                 <div className="card-body">
@@ -17,7 +18,10 @@ function Trips(props) {
                     <h5 className="card-title">{trip.tripName}</h5>
                     <p className="card-text">Origin: {trip.origin.station}</p>
                     <p className="card-text">Destination: {trip.destination.station}</p>
-                    {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
+                    <a href="/" class="btn btn-primary">Details</a>
+                    {(props.user.profile === trip.commuter._id) && 
+                    <button className="btn btn-danger">Delete</button>
+                    }
                 </div>
                 </div>
             </div>

@@ -60,7 +60,7 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
         <Route path="/addTrip" element={<AddTrip handleCreateTrip={handleCreateTrip} />} />
-        <Route path='/trips' element={<Trips trips={trips} />} />
+        <Route path='/trips' element={<Trips user={user} trips={trips} />} />
       </Routes>
     </>
   )
