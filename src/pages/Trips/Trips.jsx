@@ -4,23 +4,28 @@ import { Link } from 'react-router-dom';
 function Trips(props) {
     // All of the trips from App.jsx state to map through
     const trips = props.trips
+    const userId = props.user.profile
+
+    console.log("These are trips from Trips.jsx: ", trips)
+    console.log(props.user.profile)
+    // console.log(trips.commuter._id)
     return (
     <>
         <h1>Trips</h1>
         <div className="row">
-            {trips.map(trip => 
+            {trips.filter(trip => trip.commuter._id === userId).map(userTrips => 
             <div 
-                key={trip._id}
+                key={userTrips._id}
                 className="col-sm-3">
                 <div className="card">
                 <div className="card-body">
                     <h4>Trip Name:</h4>
-                    <h5 className="card-title">{trip.tripName}</h5>
-                    <p className="card-text">Origin: {trip.origin.station}</p>
-                    <p className="card-text">Destination: {trip.destination.station}</p>
-                    {(props.user.profile === trip.commuter._id) && 
-                    <button onClick={() => props.handleDeleteTrip(trip._id)} className="btn btn-danger">Delete</button>}
-                    <Link to="/tripDetails" className='btn btn-warning' state={trip} >
+                    <h5 className="card-title">{userTrips.tripName}</h5>
+                    <p className="card-text">Origin: {userTrips.origin.station}</p>
+                    <p className="card-text">Destination: {userTrips.destination.station}</p>
+                    {(props.user.profile === userTrips.commuter._id) && 
+                    <button onClick={() => props.handleDeleteTrip(userTrips._id)} className="btn btn-danger">Delete</button>}
+                    <Link to="/tripDetails" className='btn btn-warning' state={userTrips} >
                         Details
                     </Link>
                 </div>
