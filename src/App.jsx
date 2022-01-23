@@ -9,7 +9,9 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddTrip from './pages/AddTrip/AddTrip'
 import Trips from './pages/Trips/Trips'
-import { createTrip, getTrips, deleteTrip } from './services/tripService'
+import { createTrip, getTrips, deleteTrip, updateTrip } from './services/tripService'
+import { TripDetails } from './components/TripDetails/TripDetails'
+import EditTrip from './pages/EditTrip/EditTrip'
 
 
 const App = () => {
@@ -42,10 +44,18 @@ const App = () => {
   const handleDeleteTrip = id => {
     //make API call to delete trip
     deleteTrip(id)
+    // update state to reflect deleted trip
     .then(deletedTrip => {
       setTrips(trips.filter(trip => trip._id !== deletedTrip._id))
     })
-    // update state to reflect deleted trip
+  }
+
+  const handleUpdateTrip = tripData => {
+    updateTrip(tripData)
+    .then(updatedTripData => {
+      const newTripArray = trips.map(trip => trip._id === updatedTripData._id ? updatedTripData : trip)
+      setTrips(newTripArray)
+    })
   }
 
   return (
@@ -74,6 +84,8 @@ const App = () => {
           <Trips user={user} trips={trips} handleDeleteTrip={handleDeleteTrip} /> : 
           <Navigate to="/login" />} 
         />
+        <Route path="/:tripDetails" element={<TripDetails user={user} />} />
+        <Route path="/editTrip" element={<EditTrip handleUpdateTrip={handleUpdateTrip}  />} />
       </Routes>
     </>
   )

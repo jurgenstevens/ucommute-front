@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Trips(props) {
     // All of the trips from App.jsx state to map through
@@ -17,10 +18,11 @@ function Trips(props) {
                     <h5 className="card-title">{trip.tripName}</h5>
                     <p className="card-text">Origin: {trip.origin.station}</p>
                     <p className="card-text">Destination: {trip.destination.station}</p>
-                    <a href="/" className="btn btn-primary">Details</a>
                     {(props.user.profile === trip.commuter._id) && 
-                    <button onClick={() => props.handleDeleteTrip(trip._id)} className="btn btn-danger">Delete</button>
-                    }
+                    <button onClick={() => props.handleDeleteTrip(trip._id)} className="btn btn-danger">Delete</button>}
+                    <Link to="/tripDetails" className='btn btn-warning' state={trip} >
+                        Details
+                    </Link>
                 </div>
                 </div>
             </div>

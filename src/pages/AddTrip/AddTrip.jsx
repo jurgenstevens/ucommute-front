@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const AddTrip = (props) => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [formData, setFormData] = useState({
         tripName: '',
         origin: '',
@@ -10,8 +10,8 @@ const AddTrip = (props) => {
     })
     // make a fetch call to access list of trains by color onClick and set them to the trainList
     const [trainData, setTrainData] = useState([])
-    const [originLine, setOriginLine] = useState('')
-    const [destinationLine, setDestinationLine] = useState('')
+    const [originLine, setOriginLine] = useState()
+    const [destinationLine, setDestinationLine] = useState()
 
     const lines = ['---', 'Orange', 'Brown', 'Red', 'Blue', 'Green', 'Purple', 'Yellow']
 
@@ -53,7 +53,7 @@ const AddTrip = (props) => {
         try {
           // call will go here to submit to API
           props.handleCreateTrip(formData)
-          navigate('/')
+        //   navigate('/')
         } catch (err) {
           console.log(err)
         }
@@ -142,9 +142,9 @@ const AddTrip = (props) => {
                     />
                 </div>
                 <br />
-                <button disabled={isFormInvalid()}>Create</button>    
+                <button className='btn btn-primary' disabled={isFormInvalid()}>Create</button>    
                 <Link to="/">
-                    <button>Cancel</button>         
+                    <button className='btn btn-danger'>Cancel</button>         
                 </Link>
             </form>
         </>
