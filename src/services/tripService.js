@@ -16,7 +16,9 @@ function createTrip(tripData) {
 
 function getTrips(){
     return fetch(BASE_URL, {
-        headers: {'Authorization': `Bearer ${tokenService.getToken()}`}
+        headers: {'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+    }
     })
     .then(res => res.json())
 }
