@@ -15,7 +15,7 @@ function Trips(props) {
                 key={userTrips._id}
                 className="col-sm-3">
                 <div className="card">
-                <div className="card-body">
+                <div className="card-body trip-card">
                     <h4>Trip Name:</h4>
                     <h5 className="card-title">{userTrips.tripName}</h5>
                     <p className="card-text">Origin: {userTrips.origin.station}</p>
