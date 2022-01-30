@@ -1,6 +1,6 @@
 import * as tokenService from '../services/tokenService'
 
-const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/trips`
+const BASE_URL = "https://ucommute-mern-back.herokuapp.com/trips"
 
 function createTrip(tripData) {
   return fetch(BASE_URL, {
@@ -16,8 +16,7 @@ function createTrip(tripData) {
 
 function getTrips(){
     return fetch(BASE_URL, {
-        headers: {'Authorization': `Bearer ${tokenService.getToken()}`,
-        'Content-Type': 'application/json'
+        headers: {'Authorization': `Bearer ${tokenService.getToken()}`
     }
     })
     .then(res => res.json())

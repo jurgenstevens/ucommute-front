@@ -6,9 +6,6 @@ function Trips(props) {
     const trips = props.trips
     const userId = props.user.profile
 
-    console.log("These are trips from Trips.jsx: ", trips)
-    console.log(props.user.profile)
-    // console.log(trips.commuter._id)
     return (
     <>
         <h1>Trips</h1>
