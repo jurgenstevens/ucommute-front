@@ -1,6 +1,6 @@
 import * as tokenService from '../services/tokenService'
 
-const BASE_URL = "https://ucommute-mern-back.herokuapp.com/trips"
+const BASE_URL = "http://localhost:3001"
 
 function createTrip(tripData) {
   return fetch(BASE_URL, {
