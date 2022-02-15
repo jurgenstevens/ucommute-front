@@ -19,6 +19,8 @@ const App = () => {
   const [trips, setTrips] = useState([])
   const navigate = useNavigate()
 
+  console.log("These are trips from App.jsx: ", trips)
+
   useEffect(() => {
     getTrips()
     .then(trips => setTrips(trips))
