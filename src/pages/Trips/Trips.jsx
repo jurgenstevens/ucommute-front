@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 
 function Trips(props) {
     // All of the trips from App.jsx state to map through
-    const trips = props.trips
-    const userId = props.user.profile
-    console.log("These are trips from Trips.js: ", trips)
+    // const trips = props.trips
+    // const userId = props.user.profile
+    // console.log("These are trips from Trips.js: ", trips)
+    // const userTrips = trips.filter(trip => trip.commuter._id === userId)
+    console.log("These are userTrips from Trips.js: ", props.trips)
+
     return (
     <>
         <h1>Trips</h1>
         <div className="row">
-            {trips.filter(trip => trip.commuter._id === userId).map(userTrips => 
+            {
+            props.trips.map(userTrips => 
             <div 
                 key={userTrips._id}
                 className="col-sm-3">

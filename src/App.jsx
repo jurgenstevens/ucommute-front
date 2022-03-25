@@ -39,7 +39,9 @@ const App = () => {
   // function to handle creating a trip
   const handleCreateTrip = tripData => {
     createTrip(tripData)
-    .then(newTripData => setTrips([...trips, newTripData]))
+    .then(newTripData => {
+      setTrips([...trips, newTripData])
+    })
   }
 
   // function to handle deleting a trip
@@ -48,9 +50,19 @@ const App = () => {
     deleteTrip(id)
     // update state to reflect deleted trip
     .then(deletedTrip => {
-      setTrips(trips.filter(trip => trip._id !== deletedTrip._id))
+      console.log(deletedTrip)
+      setTrips(trips.filter(trip => trip._id !== id))
     })
   }
+
+  // const handleDeleteTrip = id => {
+  //   console.log('Confirm id is here', id)
+  //   //make API call to delete trip
+  //   deleteTrip(id)
+  //   .then(deletedTrip => {
+  //     setTrips(trips.filter(trip => trip._id !== id))
+  //   })
+  // }
 
   const handleUpdateTrip = tripData => {
     updateTrip(tripData)
