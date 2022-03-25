@@ -44,7 +44,7 @@ const selectedOriginLineStations = trainData.filter(station => station.line === 
 const handleDestinationLineChange = (e) => setDestinationLine(e.target.value)
 
 // create a function to set the selected station to formData.destination
-const selectedDestinationLineStations = trainData.filter(station => station.line === originLine)
+const selectedDestinationLineStations = trainData.filter(station => station.line === destinationLine)
 
 const handleChange = e => {
     setFormData({

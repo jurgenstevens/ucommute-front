@@ -29,7 +29,6 @@ function Origin() {
 
     // create a function to set the selected station to the originStation hook
     const handleStationChange = (e) => setOriginStation(e.target.value)
-    console.log("This is origin station", originStation)
 
     return (
         <div>
