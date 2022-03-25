@@ -55,15 +55,6 @@ const App = () => {
     })
   }
 
-  // const handleDeleteTrip = id => {
-  //   console.log('Confirm id is here', id)
-  //   //make API call to delete trip
-  //   deleteTrip(id)
-  //   .then(deletedTrip => {
-  //     setTrips(trips.filter(trip => trip._id !== id))
-  //   })
-  // }
-
   const handleUpdateTrip = tripData => {
     updateTrip(tripData)
     .then(updatedTripData => {
