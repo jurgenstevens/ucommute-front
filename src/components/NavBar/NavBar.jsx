@@ -6,12 +6,11 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <nav>
           <ul>
-            <li>Welcome, {user.name}</li>
-            <li><Link to="/profiles">Profiles</Link></li>
-            <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-            <li><Link to="/changePassword">Change Password</Link></li>
+            <li>{user.name}'s Commute</li>
             <li><Link to="/addTrip">Create Trip</Link></li>
             <li><Link to="/trips">Trip List</Link></li>
+            <li><Link to="/changePassword">Change Password</Link></li>
+            <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
           </ul>
         </nav>
       :
