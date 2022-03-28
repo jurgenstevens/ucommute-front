@@ -3,7 +3,6 @@ import * as tokenService from '../services/tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/trips`
 
 function createTrip(tripData) {
-    console.log("This is tripData: ", tripData)
   return fetch(BASE_URL, {
         method: "POST",
         headers: { 

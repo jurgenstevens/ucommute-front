@@ -48,7 +48,6 @@ const App = () => {
     deleteTrip(id)
     // update state to reflect deleted trip
     .then(deletedTrip => {
-      console.log(deletedTrip)
       setTrips(trips.filter(trip => trip._id !== id))
     })
   }
