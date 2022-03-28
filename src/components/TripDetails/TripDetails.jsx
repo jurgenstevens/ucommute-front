@@ -10,11 +10,7 @@ export const TripDetails = (props) => {
     const tripOriginStation = location.state.origin.station
     const tripDestinationLine = location.state.destination.line
     const tripDestinationStation = location.state.destination.station
-    console.log("This is tripName: ",tripName)
-    console.log( "This is tripOrigin: ",tripOriginLine)
 
-
-    console.log(location.state)
     return (
         <>
             <h1>Trip Details</h1>

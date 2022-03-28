@@ -11,7 +11,6 @@ function EditTrip(props) {
         destination: location.state.destination._id,
         id: location.state._id
     })
-    console.log("This is formData from EditTrip: ", formData)
 
 // make a fetch call to access list of trains by color onClick and set them to the trainList
 const [trainData, setTrainData] = useState([])

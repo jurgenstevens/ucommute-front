@@ -7,7 +7,6 @@ function Trips(props) {
     const userId = props.user.profile
     // Map only through users' trips
     const userTrips = trips.filter(trip => trip.commuter._id === userId)
-    console.log("These are userTrips from Trips.js: ", props.trips)
 
     return (
     <>
