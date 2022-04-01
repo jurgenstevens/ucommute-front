@@ -11,7 +11,7 @@ function createTrip(tripData) {
      },
      body: JSON.stringify(tripData)
   })
-  .then (res =>res.json())
+  .then (res => res.json())
 }
 
 function getTrips(){

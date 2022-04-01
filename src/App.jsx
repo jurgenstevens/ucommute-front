@@ -48,6 +48,7 @@ const App = () => {
     deleteTrip(id)
     // update state to reflect deleted trip
     .then(deletedTrip => {
+      console.log()
       setTrips(trips.filter(trip => trip._id !== id))
     })
   }
@@ -64,7 +65,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing className="landing" user={user} />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

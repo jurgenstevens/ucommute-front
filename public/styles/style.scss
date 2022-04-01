@@ -1,5 +1,9 @@
-body {
-    background: black;
+@import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@800&display=swap);
+
+$public-sans: 'Public Sans', sans-serif;
+
+body{
+    background: #181717;
     color: white;
-    // font-style: helvetica medium;
+    font-family: $public-sans;
 }

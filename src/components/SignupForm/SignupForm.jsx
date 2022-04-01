@@ -92,7 +92,7 @@ const SignupForm = props => {
           />
         </div>
         <div className={styles.inputContainer}>
-          <button disabled={isFormInvalid()} className={styles.button} className='btn btn-primary'>
+          <button disabled={isFormInvalid()} className={styles.button && 'btn btn-primary'}>
             Sign Up
           </button>
           <Link to="/">
