@@ -6,7 +6,10 @@ uCommute is a Chicago commuting app that allows you to create and save commute t
 ## How To Navigate
 Start by clicking the Sign Up button in the navbar and filling out the forms for the Name, Email, Password and Confirm Password as well in order to create an account. Once you sign up, click the Create Trip button in the navbar. You'll see four drop downs. Start with the Origin's first dropdown and choose the train line you're originating from. Once you've done so, it will list the stations corresponding to that train line. Do the same for the destination, and you can name the commute, then create it. Once you've done so, you can see it on your list and delete it if you wish or update it after clicking "Details". Enjoy your commute!
 
-#Technologies Used
+# Website Link
+Visit us @ <a href="https://ucommute-chi.herokuapp.com/">uCommute</a>!
+
+# Technologies Used
 <div align="center">
     <h3>Under My Belt</h3>
     <a href="#"><img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3" />  </a>
@@ -21,3 +24,4 @@ Start by clicking the Sign Up button in the navbar and filling out the forms for
     <a href="#"><img src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku" />  </a>
     <a href="#"><img src="https://img.shields.io/badge/-Trello-0079BF?style=flat-square&logo=Trello&logoColor=white" />  </a>
 </div>
+
