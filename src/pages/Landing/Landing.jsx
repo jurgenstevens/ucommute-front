@@ -1,13 +1,10 @@
-import styles from './Landing.module.css'
+// import styles from './Landing.module.css'
 
 const Landing = ({ user }) => {
   return (
-    <main className={styles.container}>
+    <main className="landing">
       {user ? 
-      <h1>Welcome back to uCommute, {user.name}!
-          <br/>
-          Let's get your commute started.
-      </h1>
+      <h1>Start your commute, {user.name}!</h1>
       : 
       <h1>
         Welcome to uCommute! 

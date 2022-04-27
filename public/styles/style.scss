@@ -7,3 +7,13 @@ body{
     color: white;
     font-family: $public-sans;
 }
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing {
+    @include flexCenter()
+}
