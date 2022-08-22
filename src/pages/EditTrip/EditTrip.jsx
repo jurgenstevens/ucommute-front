@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 function EditTrip(props) {
     const location = useLocation()
+    console.log(location)
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
