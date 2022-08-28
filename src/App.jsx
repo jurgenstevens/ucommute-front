@@ -9,19 +9,24 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddTrip from './pages/AddTrip/AddTrip'
 import Trips from './pages/Trips/Trips'
+import Stops from './pages/Stops/Stops'
 import { createTrip, getTrips, deleteTrip, updateTrip } from './services/tripService'
 import { TripDetails } from './components/TripDetails/TripDetails'
 import EditTrip from './pages/EditTrip/EditTrip'
+import { getStops } from './services/stopService'
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [trips, setTrips] = useState([])
+  const [stops, setStops] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
     getTrips()
     .then(trips => setTrips(trips))
+    getStops()
+    .then(stops => setStops(stops))
   }, [])
 
   const handleLogout = () => {
@@ -85,6 +90,10 @@ const App = () => {
         <Route path="/addTrip" element={<AddTrip handleCreateTrip={handleCreateTrip} />} />
         <Route path="/trips" element={user ? 
           <Trips user={user} trips={trips} handleDeleteTrip={handleDeleteTrip} /> : 
+          <Navigate to="/login" />} 
+        />
+        <Route path="/stops" element={user ? 
+          <Stops user={user} stops={stops}/> : 
           <Navigate to="/login" />} 
         />
         <Route path="/:tripDetails" element={<TripDetails user={user} />} />
