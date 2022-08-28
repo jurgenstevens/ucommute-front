@@ -8,6 +8,7 @@ const NavBar = ({ user, handleLogout }) => {
           <ul>
             <li>{user.name}'s Commute</li>
             <li><Link to="/addTrip">Create Trip</Link></li>
+            <li><Link to="/stops">Arrival Times</Link></li>
             <li><Link to="/trips">Trip List</Link></li>
             <li><Link to="/changePassword">Change Password</Link></li>
             <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
