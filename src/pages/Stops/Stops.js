@@ -17,6 +17,7 @@ function Stops(props) {
   console.log(selectedStop)
   console.log(stopData)
 
+  // useEffect will run if a selectedStop goes from empty to one set and will take the key and call the getStop service function, return the stop and set the stop as the stopData
   useEffect(() => {
     getStop(selectedStop.key)
     .then(stop => setStopData(stop))
