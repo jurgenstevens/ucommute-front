@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import { getStop } from '../../services/stopService';
-import { parseString } from 'xml2js'
 
 function Stops(props) {
   // All of the stops from App.jsx state to map through
@@ -13,11 +12,15 @@ function Stops(props) {
     }
   })
   // State for the currently selected station
-  const [selectedStop, setSelectedStop] = useState(null)
+  const [selectedStop, setSelectedStop] = useState({})
+  const [stopData, setStopData] = useState({})
   console.log(selectedStop)
+  console.log(stopData)
 
-  // Create a condition where if a selectedStop is true, then to make the ctaFetch call with that selectedStop's key, ergo map_id
-
+  useEffect(() => {
+    getStop(selectedStop.key)
+    .then(stop => setStopData(stop))
+  }, [selectedStop])
 
   // Map through each station and return object with value, label and key as object to render each station using react-select Select component. Ref: https://stackoverflow.com/questions/55173409/generate-options-by-mapping-over-array-of-objects-with-react-select
   return (
@@ -28,7 +31,6 @@ function Stops(props) {
         onChange={setSelectedStop}
         options={stops}
       />
-      
     </>
   )
 }
