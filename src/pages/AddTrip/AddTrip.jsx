@@ -65,7 +65,7 @@ const AddTrip = (props) => {
     // form validation; can't create trip unless fields are filled
     const isFormInvalid = () => {
         return !(tripName && origin && destination)
-      }
+    }
 
     return (
         <>

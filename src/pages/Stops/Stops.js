@@ -11,27 +11,29 @@ function Stops(props) {
       key: stop.map_id
     }
   })
-  // State for the currently selected station
-  const [selectedStop, setSelectedStop] = useState({})
-  const [stopData, setStopData] = useState({})
-  console.log(selectedStop)
-  console.log(stopData)
+  const [stopData, setStopData] = useState(null)
+	
+	function onChange({ key }) {
+		console.log(key)
+		getStop(key).then(stop => setStopData(stop))
+	}
+	
+	console.log(stopData)
 
-  // useEffect will run if a selectedStop goes from empty to one set and will take the key and call the getStop service function, return the stop and set the stop as the stopData
-  useEffect(() => {
-    getStop(selectedStop.key)
-    .then(stop => setStopData(stop))
-  }, [selectedStop])
-
-  // Map through each station and return object with value, label and key as object to render each station using react-select Select component. Ref: https://stackoverflow.com/questions/55173409/generate-options-by-mapping-over-array-of-objects-with-react-select
-  return (
-    <>
-      <h1>Select Your Stop To Check Train Arrival Time:</h1>
-      <Select
-        defaultValue={selectedStop}
-        onChange={setSelectedStop}
-        options={stops}
-      />
+	return (
+		<>
+			<h1>Select Your Stop To Check Train Arrival Time:</h1>
+			<Select
+				options={stops}
+				onChange={onChange}
+				defaultValue={stops[0]}
+			/>
+			{
+      
+      stopData ? stopData.ctatt.eta.map((stop) => {
+        return <h1>{stop.destNm[0]} </h1>
+      })
+      : <h1>No Stations</h1>}
     </>
   )
 }
