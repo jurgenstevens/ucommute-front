@@ -14,7 +14,6 @@ function Stops(props) {
   const [stopData, setStopData] = useState(null)
 	
 	function onChange({ key }) {
-		console.log(key)
 		getStop(key).then(stop => setStopData(stop))
 	}
 	
@@ -28,10 +27,8 @@ function Stops(props) {
 				onChange={onChange}
 				defaultValue={stops[0]}
 			/>
-			{
-      
-      stopData ? stopData.ctatt.eta.map((stop) => {
-        return <h1>{stop.destNm[0]} </h1>
+			{stopData ? stopData.ctatt.eta.map((stop, idx) => {
+        return <h1 key={idx}>{stop.destNm[0]} {stop.arrT[0].slice(12,13) - stopData.ctatt.tmst[0].slice(12,13)}</h1>
       })
       : <h1>No Stations</h1>}
     </>
