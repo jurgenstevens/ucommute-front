@@ -4,6 +4,10 @@ body {
   font-family: "Public Sans", sans-serif;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .landing {
   display: -webkit-box;
   display: -ms-flexbox;
