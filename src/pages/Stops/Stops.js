@@ -29,7 +29,14 @@ function Stops(props) {
 			{stopData ? stopData.ctatt.eta.map((stop, idx) => {
         let timeRemaining = parseInt(stop.arrT[0].slice(10, 17).replace(":", "")) - parseInt(stopData.ctatt.tmst[0].slice(10, 17).replace(":", ""))
         console.log(timeRemaining)
-        return <h1 key={idx}>{stop.destNm[0]} {timeRemaining} min</h1>
+        if(timeRemaining < 2){
+          return <h1 key={idx}>{stop.destNm[0]} Due</h1>
+        }
+        if(timeRemaining < 45){
+          return <h1 key={idx}>{stop.destNm[0]} {timeRemaining} min</h1>
+        } else {
+          return <h1 key={idx}>{stop.destNm[0]} Not Available</h1> 
+        }
       })
       : <h1>No Stations</h1>}
     </>
