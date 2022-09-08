@@ -8,6 +8,18 @@ ul {
   list-style-type: none;
 }
 
+.navbar-links {
+  display: inline;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
 .landing {
   display: -webkit-box;
   display: -ms-flexbox;

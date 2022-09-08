@@ -11,6 +11,14 @@ ul {
     list-style-type: none;
 }
 
+.header {
+    grid-area: header;
+}
+
+.footer {
+    grid-area: footer;
+}
+
 @mixin flexCenter {
     display: flex;
     justify-content: center;

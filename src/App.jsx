@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} handleLogout={handleLogout} className="header" />
       <Routes>
         <Route path="/" element={<Landing className="landing" user={user} />} />
         <Route
@@ -99,6 +99,7 @@ const App = () => {
         <Route path="/:tripDetails" element={<TripDetails user={user} />} />
         <Route path="/editTrip" element={<EditTrip handleUpdateTrip={handleUpdateTrip}  />} />
       </Routes>
+      <div className="footer">uCommute 2022</div>
     </>
   )
 }
