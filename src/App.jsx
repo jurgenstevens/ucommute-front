@@ -68,6 +68,8 @@ const App = () => {
 
   return (
     <>
+    <div id="page-container">
+      <div id="content-wrap">
       <NavBar user={user} handleLogout={handleLogout} className="header" />
       <Routes>
         <Route path="/" element={<Landing className="landing" user={user} />} />
@@ -99,7 +101,9 @@ const App = () => {
         <Route path="/:tripDetails" element={<TripDetails user={user} />} />
         <Route path="/editTrip" element={<EditTrip handleUpdateTrip={handleUpdateTrip}  />} />
       </Routes>
-      <div className="footer">uCommute 2022</div>
+      </div>
+      <div id="footer">uCommute 2022</div>
+      </div>
     </>
   )
 }
