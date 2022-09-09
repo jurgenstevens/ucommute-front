@@ -4,8 +4,8 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <>
       {user ?
-        <nav>
-          <ul className='navbar-list'>
+        <nav className='navbar-list'>
+          <ul>
             <li className='navbar-links'>{user.name}'s Commute</li>
             <li className='navbar-links'><Link to="/addTrip">Create Trip</Link></li>
             <li className='navbar-links'><Link to="/stops">Arrival Times</Link></li>
@@ -15,7 +15,7 @@ const NavBar = ({ user, handleLogout }) => {
           </ul>
         </nav>
       :
-        <nav>
+        <nav className='auth-navbar'>
           <ul>
             <li className='navbar-links'><Link to="/login">Log In</Link></li>
             <li className='navbar-links'><Link to="/signup">Sign Up</Link></li>

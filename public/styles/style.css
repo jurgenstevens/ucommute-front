@@ -10,9 +10,16 @@ ul {
   list-style-type: none;
 }
 
+.auth-navbar {
+  text-align: center;
+}
+
 .navbar-links {
+  text-align: center;
+}
+
+.navbar-links > ul > li {
   display: inline;
-  padding: 5px;
 }
 
 .landing {
