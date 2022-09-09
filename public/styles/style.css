@@ -15,11 +15,9 @@ ul {
 }
 
 .navbar-links {
-  text-align: center;
-}
-
-.navbar-links > ul > li {
   display: inline;
+  padding: 5px;
+  text-align: center;
 }
 
 .landing {
