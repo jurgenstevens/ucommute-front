@@ -12,7 +12,7 @@ ul {
 
 .navbar-links {
   display: inline;
-  padding: 5px
+  padding: 5px;
 }
 
 .landing {
@@ -25,7 +25,21 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
+
+.landingImgBox {
+  display: grid;
+  height: 100%;
+}
+
+#landingImg {
+  max-width: 90%;
+  max-height: 100vh;
+  margin: auto;
+}
+
+
 
 #page-container {
   position: relative;
