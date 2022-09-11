@@ -11,8 +11,8 @@ const Landing = ({ user }) => {
         <img src="/images/ctamaptransparent.png" alt="cta train loop" id="landingImg" />
       </div>
       <div className="landinglogo">
+        <h1 id="landingHeader"> uCommute </h1>
         <img src="/images/ucommutelogo.png" alt="cta-logo" className="ucommuteLogo"/>
-        <h1 id="landingHeader"> uCommute</h1>
       </div>
       </div>
       }
