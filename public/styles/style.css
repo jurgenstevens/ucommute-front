@@ -10,7 +10,7 @@ body {
 }
 
 #landingHeader {
-  margin: 15vh auto;
+  margin: 2vh auto;
   color: #1589FF;
   font-size: 5.2em;
   font-style: oblique;
@@ -53,7 +53,7 @@ ul {
 
 #landingImg {
   max-width: 90%;
-  max-height: 100vh;
+  max-height: 80vh;
   margin: auto;
 }
 
