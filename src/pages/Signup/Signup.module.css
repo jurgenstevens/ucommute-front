@@ -1,5 +1,6 @@
-/* .container {
+.container {
   display: flex;
   align-items: center;
   flex-direction: column;
-} */
+  color: #1589FF;
+}

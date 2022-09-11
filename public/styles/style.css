@@ -6,6 +6,7 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
   font-family: 'Titillium Web', sans-serif;
   font-weight: bolder;
+  text-decoration: none;
 }
 
 #landingHeader {
@@ -29,6 +30,7 @@ ul {
   text-align: center;
   align-items: center;
   color: #1589FF;
+  text-decoration: none;
 }
 
 .landing {
