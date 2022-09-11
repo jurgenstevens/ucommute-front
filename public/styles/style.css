@@ -7,13 +7,9 @@ body {
   font-family: 'Titillium Web', sans-serif;
   font-weight: bolder;
   text-decoration: none;
-}
-
-#landingHeader {
-  margin: 2vh auto;
-  color: #1589FF;
-  font-size: 5.2em;
-  font-style: oblique;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 ul {
@@ -57,6 +53,20 @@ ul {
   margin: auto;
 }
 
+.ucommuteLogo{
+  display: inline;
+  max-width: 20%;
+  height: auto;
+}
+
+#landingHeader {
+  margin: 2vh auto;
+  color: #1589FF;
+  font-size: 4em;
+  font-style: oblique;
+  display: inline;
+  border-top: 15px;
+}
 
 
 #page-container {
