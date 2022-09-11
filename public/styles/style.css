@@ -68,6 +68,18 @@ ul {
   border-top: 15px;
 }
 
+.authWrap{
+  text-align: center;
+}
+
+.authMap {
+  display: inline-block;
+  width: 35%;
+}
+
+.authForm {
+  display: inline-block;
+}
 
 #page-container {
   position: relative;
