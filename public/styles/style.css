@@ -1,9 +1,18 @@
-@import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@800&display=swap);
+@import url('https://fonts.googleapis.com/css family=Titillium+Web:300,400,400i,600,600i,700');
+
 body {
   background: #000000;
   /* font-family: "Public Sans", sans-serif; */
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 800;
+  /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+}
+
+#landingHeader {
+  margin: 15vh auto;
+  color: #1589FF;
+  font-size: 5.2em;
+  font-style: oblique;
 }
 
 ul {
@@ -18,6 +27,8 @@ ul {
   display: inline;
   padding: 5px;
   text-align: center;
+  align-items: center;
+  color: #1589FF;
 }
 
 .landing {
@@ -61,5 +72,6 @@ ul {
   width: 100%;
   height: 2.5rem;            /* Footer height */
   padding: 25px;
+  color: #1589FF;
 }
 /*# sourceMappingURL=style.css.map */
