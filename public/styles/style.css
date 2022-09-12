@@ -110,12 +110,14 @@ ul {
   display: inline-block;
   position: fixed;
   width: 45%;
+  height: 45%;
   margin-right: 3vw;
 }
 
 .addTripImg {
   display: inline-block;
-  width: 90%;
+  width: 100%;
+  height: auto;
 }
 
 #footer {

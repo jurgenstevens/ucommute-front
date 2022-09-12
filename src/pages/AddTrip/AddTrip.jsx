@@ -147,6 +147,7 @@ const AddTrip = (props) => {
                                 value={tripName}
                                 name='tripName'
                                 onChange={handleChange}
+                                className="form-control"
                             />
                         </div>
                         <br />
