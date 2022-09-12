@@ -4,7 +4,12 @@ const Landing = ({ user }) => {
   return (
     <main className="landing">
       {user ? 
-      <h1>Start your commute, {user.name}!</h1>
+      <div className="loggedInLanding">
+        <img src="/images/ctabluelineohare01.jpeg" alt="cta-train" />
+        <br/>
+        <h1 id="landingHeader">Start your commute, {user.name}!</h1>
+
+      </div>
       : 
       <div>
       <div className="landingImgBox">
