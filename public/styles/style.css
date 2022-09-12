@@ -90,6 +90,34 @@ ul {
   padding-bottom: 2.5rem;    /* Footer height */
 }
 
+.addTripContainer {
+  position: relative;
+}
+
+.addTripForm {
+  text-align: center;
+  color: #1589FF;
+  display: inline-block;
+  background-color: #202020;
+  width: 40%;
+  padding: 10vw;
+  margin-left: 3vh;
+  margin-right: 4vh;
+  border-radius: 25px;
+}
+
+.addTripImgBox {
+  display: inline-block;
+  position: fixed;
+  width: 45%;
+  margin-right: 3vw;
+}
+
+.addTripImg {
+  display: inline-block;
+  width: 90%;
+}
+
 #footer {
   position: absolute;
   bottom: 0;

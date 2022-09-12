@@ -69,84 +69,91 @@ const AddTrip = (props) => {
 
     return (
         <>
-            {/* Origin */}
-            <form
-                autoComplete='off'
-                onSubmit={handleSubmit}
-            >
-                <div className='origin'>
-                    <h3>Origin</h3>
-                    <select onChange={e => handleOriginLineChange(e)}>
-                        {lines.map(line => {
-                            return(
-                                <option value={line} key={line}>{line}</option>
-                            )
-                        })}
-                    </select>
-                    <br />
-                    {
-                    // set a ternary operator stating that if the user has picked an origin line, they can now pick a station for the origin
-                    originLine ? 
-                    <select
-                        onChange={handleChange}
-                        value={origin}
-                        name="origin"
+            <div className="addTripContainer">
+                <div className="addTripForm">
+                    {/* Origin */}
+                    <form
+                        autoComplete='off'
+                        onSubmit={handleSubmit}
                     >
-                        <option>---</option>
-                        {selectedOriginLineStations.map((station, idx) => {
-                            return(
-                                <option value={station._id} key={idx}>{station.station}</option>
-                            )
-                        })}
-                    </select> : 
-                    <h4>Choose a train line.</h4>
-                    }
+                        <div className='origin'>
+                            <h3>Origin</h3>
+                            <select onChange={e => handleOriginLineChange(e)}>
+                                {lines.map(line => {
+                                    return(
+                                        <option value={line} key={line}>{line}</option>
+                                    )
+                                })}
+                            </select>
+                            <br />
+                            {
+                            // set a ternary operator stating that if the user has picked an origin line, they can now pick a station for the origin
+                            originLine ? 
+                            <select
+                                onChange={handleChange}
+                                value={origin}
+                                name="origin"
+                            >
+                                <option>---</option>
+                                {selectedOriginLineStations.map((station, idx) => {
+                                    return(
+                                        <option value={station._id} key={idx}>{station.station}</option>
+                                    )
+                                })}
+                            </select> : 
+                            <h4>Choose a train line.</h4>
+                            }
+                        </div>
+                        
+                        {/* Destination */}
+                        <div className='destination'>
+                            <h3>Destination</h3>
+                            <select onChange={e => handleDestinationLineChange(e)}>
+                                {lines.map(line => {
+                                    return(
+                                        <option value={line} key={line}>{line}</option>
+                                    )
+                                })}
+                            </select>
+                            <br />
+                            {
+                            // set a ternary operator stating that if the user has picked an origin line, they can now pick a station for the origin
+                            destinationLine ? 
+                            <select
+                                onChange={handleChange}
+                                value={destination}
+                                name="destination"
+                            >
+                                <option>---</option>
+                                {selectedDestinationLineStations.map((station, idx) => {
+                                    return(
+                                        <option value={station._id} key={idx}>{station.station}</option>
+                                    )
+                                })}
+                            </select> : <h4>Choose a train line.</h4>}
+                        </div>
+                        
+                    {/* Trip Name */}
+                        <div className="tripName">
+                            <h3>Trip Name:</h3>
+                            <input 
+                                type="text"
+                                value={tripName}
+                                name='tripName'
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <br />
+                        <button className='btn btn-primary' disabled={isFormInvalid()}>Create</button>    
+                        <Link to="/">
+                            <button className='btn btn-danger'>Cancel</button>         
+                        </Link>
+                    </form>
                 </div>
-                
-                {/* Destination */}
-                <div className='destination'>
-                    <h3>Destination</h3>
-                    <select onChange={e => handleDestinationLineChange(e)}>
-                        {lines.map(line => {
-                            return(
-                                <option value={line} key={line}>{line}</option>
-                            )
-                        })}
-                    </select>
-                    <br />
-                    {
-                    // set a ternary operator stating that if the user has picked an origin line, they can now pick a station for the origin
-                    destinationLine ? 
-                    <select
-                        onChange={handleChange}
-                        value={destination}
-                        name="destination"
-                    >
-                        <option>---</option>
-                        {selectedDestinationLineStations.map((station, idx) => {
-                            return(
-                                <option value={station._id} key={idx}>{station.station}</option>
-                            )
-                        })}
-                    </select> : <h4>Choose a train line.</h4>}
+                <div className='addTripImgBox'>
+                    <img src="/images/ctalmap.png" alt="cta-el-map" className='addTripImg'/>
                 </div>
-                
-            {/* Trip Name */}
-                <div className="tripName">
-                    <h3>Trip Name:</h3>
-                    <input 
-                        type="text"
-                        value={tripName}
-                        name='tripName'
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <button className='btn btn-primary' disabled={isFormInvalid()}>Create</button>    
-                <Link to="/">
-                    <button className='btn btn-danger'>Cancel</button>         
-                </Link>
-            </form>
+            </div>
         </>
     )
 }
