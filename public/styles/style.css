@@ -131,6 +131,9 @@ ul {
 
 select {
   width: 100%;
-  margin-left: 0;
 }
+.stopSelect {
+  width: 300px;
+}
+
 /*# sourceMappingURL=style.css.map */

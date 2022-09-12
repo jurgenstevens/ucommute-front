@@ -21,11 +21,13 @@ function Stops(props) {
 	return (
 		<>
 			<h1>Select Your Stop To Check Train Arrival Time:</h1>
-			<Select
-				options={stops}
-				onChange={onChange}
-				defaultValue={stops[0]}
-			/>
+      <div className="stopSelect">
+        <Select
+          options={stops}
+          onChange={onChange}
+          defaultValue={stops[0]}
+        />
+      </div>
 			{stopData ? stopData.ctatt.eta.map((stop, idx) => {
         let timeRemaining = parseInt(stop.arrT[0].slice(10, 17).replace(":", "")) - parseInt(stopData.ctatt.tmst[0].slice(10, 17).replace(":", ""))
         console.log(timeRemaining)
