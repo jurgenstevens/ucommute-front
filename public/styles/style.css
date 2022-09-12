@@ -126,4 +126,9 @@ ul {
   padding: 25px;
   color: #1589FF;
 }
+
+select {
+  width: 100%;
+  margin-left: 0;
+}
 /*# sourceMappingURL=style.css.map */
