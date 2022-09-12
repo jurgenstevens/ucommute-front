@@ -79,7 +79,7 @@ const AddTrip = (props) => {
                         <div className='origin'>
                             <h3>Origin</h3>
                             <select 
-                                className='btn btn-secondary dropdown-toggle' 
+                                className='btn btn-primary dropdown-toggle' 
                                 onChange={e => handleOriginLineChange(e)}>
                                 {lines.map(line => {
                                     return(
@@ -95,7 +95,7 @@ const AddTrip = (props) => {
                                 onChange={handleChange}
                                 value={origin}
                                 name="origin"
-                                className='btn btn-secondary dropdown-toggle'
+                                className='btn btn-primary dropdown-toggle'
                             >
                                 <option>---</option>
                                 {selectedOriginLineStations.map((station, idx) => {
@@ -112,7 +112,7 @@ const AddTrip = (props) => {
                         <div className='destination'>
                             <h3>Destination</h3>
                             <select 
-                                className='btn btn-secondary dropdown-toggle' 
+                                className='btn btn-primary dropdown-toggle' 
                                 onChange={e => handleDestinationLineChange(e)}>
                                 {lines.map(line => {
                                     return(
@@ -128,7 +128,7 @@ const AddTrip = (props) => {
                                 onChange={handleChange}
                                 value={destination}
                                 name="destination"
-                                className='btn btn-secondary dropdown-toggle'
+                                className='btn btn-primary dropdown-toggle'
                             >
                                 <option>---</option>
                                 {selectedDestinationLineStations.map((station, idx) => {
