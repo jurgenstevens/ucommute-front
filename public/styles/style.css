@@ -21,12 +21,13 @@ ul {
 }
 
 .navbar-links {
-  display: inline;
+  display: inline-block;
   padding: 5px;
-  text-align: center;
-  align-items: center;
   color: #1589FF;
   text-decoration: none;
+  justify-content: center;
+  margin: 1vh;
+  justify-content: space-around;
 }
 
 .landing {
