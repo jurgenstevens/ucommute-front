@@ -158,7 +158,7 @@ const AddTrip = (props) => {
                     </form>
                 </div>
                 <div className='addTripImgBox'>
-                    <img src="/images/ctalmap.png" alt="cta-el-map" className='addTripImg'/>
+                    <img src="/images/ctalogo.png" alt="cta-el-map" className='addTripImg'/>
                 </div>
             </div>
         </>

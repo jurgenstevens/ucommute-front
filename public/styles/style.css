@@ -92,6 +92,9 @@ ul {
 
 .addTripContainer {
   position: relative;
+  text-align: center;
+  top: 20vh;
+  vertical-align: top;
 }
 
 .addTripForm {
@@ -99,24 +102,22 @@ ul {
   color: #1589FF;
   display: inline-block;
   background-color: #202020;
-  width: 40%;
-  padding: 10vw;
-  margin-left: 3vh;
-  margin-right: 4vh;
+  width: 375px;
+  height: auto;
+  padding: 40px 40px 40px 40px;
+  margin-right: 5vh;
   border-radius: 25px;
 }
 
 .addTripImgBox {
-  display: inline-block;
-  position: fixed;
-  width: 45%;
-  height: 45%;
-  margin-right: 3vw;
+  display: inline-flex;
+  width: 350px;
+  height: auto;
+  top: 10vh;
 }
 
 .addTripImg {
-  display: inline-block;
-  width: 100%;
+  width: 120%;
   height: auto;
 }
 
