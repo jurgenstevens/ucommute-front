@@ -30,6 +30,10 @@ ul {
   justify-content: space-around;
 }
 
+.changePassword{
+  color: #1589FF;
+}
+
 .landing {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -37,57 +37,59 @@ const ChangePasswordForm = props => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className={styles.container}
-    >
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Current Password</label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="password"
-          value={pw}
-          name="pw"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="newPassword" className={styles.label}>
-          New Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="newPassword"
-          value={newPw}
-          name="newPw"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="newPasswordConf" className={styles.label}>
-          Confirm New Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="newPasswordConf"
-          value={newPwConf}
-          name="newPwConf"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
-          Change Password
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+    <div className="changePassword">
+      <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        className={styles.container}
+      >
+        <div className={styles.inputContainer}>
+          <label htmlFor="password" className={styles.label}>Current Password</label>
+          <input
+            type="password"
+            autoComplete="off"
+            id="password"
+            value={pw}
+            name="pw"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="newPassword" className={styles.label}>
+            New Password
+          </label>
+          <input
+            type="password"
+            autoComplete="off"
+            id="newPassword"
+            value={newPw}
+            name="newPw"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="newPasswordConf" className={styles.label}>
+            Confirm New Password
+          </label>
+          <input
+            type="password"
+            autoComplete="off"
+            id="newPasswordConf"
+            value={newPwConf}
+            name="newPwConf"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <button disabled={isFormInvalid()} className={styles.button && 'btn btn-primary'}>
+            Change Password
+          </button>
+          <Link to="/">
+            <button className='btn btn-danger'>Cancel</button>
+          </Link>
+        </div>
+      </form>
+    </div>
   )
 }
 
