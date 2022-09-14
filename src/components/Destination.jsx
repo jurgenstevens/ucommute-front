@@ -6,7 +6,7 @@ function Destination() {
     const [destinationLine, setDestinationLine] = useState('')
     const [destinationStation, setDestinationStation] = useState('')
 
-    const lines = ['---', 'Orange', 'Brown', 'Red', 'Blue', 'Green', 'Purple', 'Yellow']
+    const lines = ['---', 'Orange', 'Brown', 'Red', 'Blue', 'Green', 'Pink', 'Purple', 'Yellow']
 
     // use the fetch method to return all of the station from the database
     useEffect(() => {
