@@ -14,13 +14,13 @@ export const TripDetails = (props) => {
     return (
         <>
             <h1 className='ucommuteHeaderFont'>Trip Details</h1>
-            <h2>{tripName}</h2>
+            <h2 className='ucommuteHeaderFont'>{tripName}</h2>
             <br />
-            <h3>{tripOriginLine} Line {tripOriginStation} </h3>
+            <h3 className='ucommuteHeaderFont'>{tripOriginLine} Line {tripOriginStation} </h3>
             {/* This is where we'll create the for loop */}
-            <h3>To</h3>
-            <h3>{tripDestinationLine} Line {tripDestinationStation}</h3>
-            <h5>Created by: {location.state.commuter.name}</h5>
+            <h3 className='ucommuteHeaderFont'>To</h3>
+            <h3 className='ucommuteHeaderFont'>{tripDestinationLine} Line {tripDestinationStation}</h3>
+            <h5 className='ucommuteHeaderFont'>Created by: {location.state.commuter.name}</h5>
             {props.user.profile === location.state.commuter._id && 
             <Link className="btn btn-warning" state={location.state} to="/editTrip">Edit</Link>
             }
