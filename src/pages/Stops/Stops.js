@@ -20,7 +20,7 @@ function Stops(props) {
   let color
 	return (
 		<>
-			<h1 className=''>Type In Your Stop To Check Train Arrival Time:</h1>
+			<h1 className='arrivalHeader'>Type In Your Stop To Check Train Arrival Time:</h1>
       <div className="stopSelect">
         <Select
           options={stops}
@@ -32,34 +32,31 @@ function Stops(props) {
         let timeRemaining = parseInt(stop.arrT[0].slice(10, 17).replace(":", "")) - parseInt(stopData.ctatt.tmst[0].slice(10, 17).replace(":", ""))
 
         // set conditions accessing each stations rt color to change h1 style
-        // stop.rt[0] = "P" ? color = "purple" :
-        // color = "black"
         if(stop.rt[0] === "Blue"){
-          color = "blue"
+          color = "#21A1DE"
         }
         if(stop.rt[0] === "Org"){
-          color = "orange"
+          color = "#F9461C"
         }
         if(stop.rt[0] === "G"){
-          color = "green"
+          color = "#299B3A"
         }
         if(stop.rt[0] === "Red"){
-          color = "red"
+          color = "#C60C30"
         }
         if(stop.rt[0] === "Pink"){
-          color = "pink"
+          color = "#E27EA6"
         }
         if(stop.rt[0] === "Brn"){
-          color = "brown"
+          color = "#62361B"
         }
         if(stop.rt[0] === "Y"){
-          color = "yellow"
+          color = "#F9E301"
         }
         if(stop.rt[0] === "P"){
-          color = "purple"
+          color = "#522398"
         }
 
-        console.log(color)
         if(timeRemaining < 2){
           return <h1 key={idx} style={{color: color}} className="stationTimes">{stop.destNm[0]}: Due</h1>
         }

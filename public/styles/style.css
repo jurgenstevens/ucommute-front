@@ -140,6 +140,10 @@ select {
   width: 300px;
 }
 
+.arrivalHeader {
+  color: #1589FF;
+}
+
 .stationTimes {
   border: 2px solid;
   border-radius: 10px;
