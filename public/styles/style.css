@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css family=Titillium+Web:300,400,400i,600,600i,700');
-
 body {
   background: #000000;
   /* font-family: "Public Sans", sans-serif; */
@@ -140,6 +138,13 @@ select {
 }
 .stopSelect {
   width: 300px;
+}
+
+.stationTimes {
+  border: 2px solid;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

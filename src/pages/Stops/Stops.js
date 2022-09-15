@@ -17,10 +17,10 @@ function Stops(props) {
 		getStop(key).then(stop => setStopData(stop))
 	}
 	console.log(stopData)
-
+  let color
 	return (
 		<>
-			<h1>Select Your Stop To Check Train Arrival Time:</h1>
+			<h1 className=''>Type In Your Stop To Check Train Arrival Time:</h1>
       <div className="stopSelect">
         <Select
           options={stops}
@@ -30,27 +30,43 @@ function Stops(props) {
       </div>
 			{stopData ? stopData.ctatt.eta.map((stop, idx) => {
         let timeRemaining = parseInt(stop.arrT[0].slice(10, 17).replace(":", "")) - parseInt(stopData.ctatt.tmst[0].slice(10, 17).replace(":", ""))
-        let color
 
-        stop.rt[0] = "Pink" ? color = "pink" :
-        stop.rt[0] = "Org" ? color = "orange" :
-        stop.rt[0] = "G" ? color = "green" :
-        stop.rt[0] = "Red" ? color = "red" :
-        stop.rt[0] = "Blue" ? color = "blue" :
-        stop.rt[0] = "Brn" ? color = "brown" :
-        stop.rt[0] = "Y" ? color = "yellow" :
-        stop.rt[0] = "P" ? color = "purple" :
-        color = "black"
-        
-        console.log(stop.rt[0])
+        // set conditions accessing each stations rt color to change h1 style
+        // stop.rt[0] = "P" ? color = "purple" :
+        // color = "black"
+        if(stop.rt[0] === "Blue"){
+          color = "blue"
+        }
+        if(stop.rt[0] === "Org"){
+          color = "orange"
+        }
+        if(stop.rt[0] === "G"){
+          color = "green"
+        }
+        if(stop.rt[0] === "Red"){
+          color = "red"
+        }
+        if(stop.rt[0] === "Pink"){
+          color = "pink"
+        }
+        if(stop.rt[0] === "Brn"){
+          color = "brown"
+        }
+        if(stop.rt[0] === "Y"){
+          color = "yellow"
+        }
+        if(stop.rt[0] === "P"){
+          color = "purple"
+        }
+
         console.log(color)
         if(timeRemaining < 2){
-          return <h1 key={idx} style={{color: color }}>{stop.destNm[0]}: Due</h1>
+          return <h1 key={idx} style={{color: color}} className="stationTimes">{stop.destNm[0]}: Due</h1>
         }
         if(timeRemaining < 45){
-          return <h1 key={idx} style={{color: color}}>{stop.destNm[0]}: {timeRemaining} min</h1>
+          return <h1 key={idx} style={{color: color}} className="stationTimes">{stop.destNm[0]}: {timeRemaining} min</h1>
         } else {
-          return <h1 key={idx} style={{color: color}}>{stop.destNm[0]}: Not Available</h1> 
+          return <h1 key={idx} style={{color: color}} className="stationTimes">{stop.destNm[0]}: Not Available</h1> 
         }
       })
       : <h1>No Stations</h1>}
