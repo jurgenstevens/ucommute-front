@@ -140,8 +140,9 @@ select {
   width: 300px;
 }
 
-.arrivalHeader {
+.ucommuteHeaderFont {
   color: #1589FF;
+  text-align: center;
 }
 
 .stationTimes {
@@ -149,6 +150,14 @@ select {
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
+}
+
+.arrivalImg {
+  width: 100%;
+}
+
+.stopSelect{
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

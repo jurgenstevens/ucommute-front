@@ -10,7 +10,7 @@ function Trips(props) {
 
     return (
     <>
-        <h1>Trips</h1>
+        <h1 className='ucommuteHeaderFont'>Trips</h1>
         <div className="row">
             {
             userTrips.map(userTrips => 

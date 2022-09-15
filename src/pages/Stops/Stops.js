@@ -20,7 +20,8 @@ function Stops(props) {
   let color
 	return (
 		<>
-			<h1 className='arrivalHeader'>Type In Your Stop To Check Train Arrival Time:</h1>
+      <img src="/images/ctaoharetermarrival.jpeg" alt="train-arrives" className='arrivalImg' />
+			<h1 className='ucommuteHeaderFont'>Type In Your Stop To Check Train Arrival Time:</h1>
       <div className="stopSelect">
         <Select
           options={stops}
@@ -66,7 +67,7 @@ function Stops(props) {
           return <h1 key={idx} style={{color: color}} className="stationTimes">{stop.destNm[0]}: Not Available</h1> 
         }
       })
-      : <h1>No Stations</h1>}
+      : <h1 style={{color: "#1589FF"}}>No Station Chosen</h1>}
     </>
   )
 }

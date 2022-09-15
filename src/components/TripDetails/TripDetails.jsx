@@ -13,7 +13,7 @@ export const TripDetails = (props) => {
 
     return (
         <>
-            <h1>Trip Details</h1>
+            <h1 className='ucommuteHeaderFont'>Trip Details</h1>
             <h2>{tripName}</h2>
             <br />
             <h3>{tripOriginLine} Line {tripOriginStation} </h3>
