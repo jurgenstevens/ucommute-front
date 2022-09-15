@@ -6,8 +6,8 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <nav className='navbar-list'>
           <ul>
-            <li className='navbar-links btn btn-outline-primary'><Link to="/addTrip">Create Trip</Link></li>
             <li className='navbar-links btn btn-outline-primary'><Link to="/stops">Arrival Times</Link></li>
+            <li className='navbar-links btn btn-outline-primary'><Link to="/addTrip">Create Trip</Link></li>
             <li className='navbar-links btn btn-outline-primary'><Link to="/trips">Trip List</Link></li>
             <li className='navbar-links btn btn-outline-primary'><Link to="/changePassword">Change Password</Link></li>
             <li className='navbar-links btn btn-outline-primary'><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
