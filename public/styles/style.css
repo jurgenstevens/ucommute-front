@@ -136,9 +136,6 @@ ul {
 select {
   width: 100%;
 }
-.stopSelect {
-  width: 300px;
-}
 
 .ucommuteHeaderFont {
   color: #1589FF;
@@ -148,16 +145,50 @@ select {
 .stationTimes {
   border: 2px solid;
   border-radius: 10px;
-  margin: 5px;
+  margin: 5px 20px;
   padding: 5px;
 }
 
+.stopSelect {
+  display: inline-block;
+  width: 300px;
+  top: 30px;
+  margin: 20px 50px;
+}
+
+
 .arrivalImg {
-  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  display: inline-block;
 }
 
 .stopSelect{
   text-align: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+.timeArrivals {
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 1333px){
+
+.stopSelect{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.arrivalImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: inline-block;
+}
+
+}
