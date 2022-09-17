@@ -16,10 +16,12 @@ ul {
 
 .auth-navbar {
   text-align: center;
+  text-decoration: none;
 }
 
 .navbar-list {
   text-align: center;
+  text-decoration: none;
 }
 
 .navbar-links {
@@ -114,6 +116,9 @@ ul {
   height: auto;
   top: 10vh;
 }
+a {
+  text-decoration: none !important;
+}
 
 .addTripImg {
   width: 120%;
@@ -194,8 +199,8 @@ select {
   display: inline-flex;
   width: 200px;
   height: auto;
-
 }
+
 
 .addTripImg {
   width: 100%;
