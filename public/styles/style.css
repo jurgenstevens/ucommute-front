@@ -12,6 +12,7 @@ body {
 
 ul {
   list-style-type: none;
+  font-size: large;
 }
 
 .auth-navbar {
@@ -200,7 +201,6 @@ select {
   width: 200px;
   height: auto;
 }
-
 
 .addTripImg {
   width: 100%;

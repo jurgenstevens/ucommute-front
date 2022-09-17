@@ -22,7 +22,7 @@ function Stops(props) {
 		<>
       <div className="selectAndImage">
         <div className="stopSelect">
-          <h1 className='ucommuteHeaderFont'>Enter Your Stop To Check Train Arrival Time:</h1>
+          <h1 className='ucommuteHeaderFont'>Enter Your Stop For Train Arrival Times:</h1>
           <Select
             options={stops}
             onChange={onChange}
