@@ -1,8 +1,12 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 
 export const TripDetails = (props) => {
     // let's make a fetch call to the backend to return all of the train stations to loop through each stations to show the user's route
+    // make a fetch call to access list of trains by color onClick and set them to the trainData
+    const [trainData, setTrainData] = useState([])
+    console.log(trainData)
 
     const location = useLocation()
     const tripName = location.state.tripName
@@ -10,6 +14,18 @@ export const TripDetails = (props) => {
     const tripOriginStation = location.state.origin.station
     const tripDestinationLine = location.state.destination.line
     const tripDestinationStation = location.state.destination.station
+
+    // use the fetch method to return all of the station from the database
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_BACKEND_SERVER_URL}/stations`)
+            .then(res => res.json())
+            .then(trainData => {
+                setTrainData(trainData)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
 
     return (
         <>
