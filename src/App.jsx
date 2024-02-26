@@ -102,7 +102,7 @@ const App = () => {
         <Route path="/editTrip" element={<EditTrip handleUpdateTrip={handleUpdateTrip}  />} />
       </Routes>
       </div>
-      <div id="footer">&copy; uCommute 2022</div>
+      <div id="footer">&copy; uCommute 2024</div>
       </div>
     </>
   )
